@@ -1,38 +1,99 @@
-.App {
+.border-bootom{
+  border-bottom: 1px solid gray;
+}
+.insta {
+  width: 30%;
+  margin: auto;
+  position: relative;
+}
+.insta p {
+  margin-bottom: 0;
+}
+.insta .img-avatar {
+  border-radius: 50%;
+}
+
+.edit-profile p {
+  border: 1px solid gray;
   text-align: center;
+  padding: 0 3px 3px 3px;
+  font-size: 18px;
+  cursor: pointer;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.highlight {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+.highlight img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  padding: 3px;
+  border: 1px solid gray;
+}
+.highlight span {
+  border-radius: 50%;
+  width: 95px;
+  height: 95px;
+  margin-top: 5px;
+  padding: 3px;
+  border: 1px solid gray;
+  display: block;
+  font-size: 35px;
+  text-align: center;
+  line-height: 90px;
+}
+
+.galley .top-profile {
+  border-top: 1px solid gray;
+  display: flex;
+  padding-top: 5px;
+}
+.galley .top-profile i {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 30px;
+  cursor: pointer;
+}
+.galley .profile {
+  display: flex;
+  flex-wrap: wrap;
+  /* border: 1px solid lightgray; */
+}
+.galley .profile .item {
+  flex: 33.3% 0 0;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  text-align: center;
+  border: 1px solid white;
+}
+.galley .profile .item img {
+  width: 100%;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: calc(50% - 15%);
+  background-color: #f8f9fa;
   color: white;
+  width: 30%;
+  border-top: 1px solid lightgrey;
 }
-
-.App-link {
-  color: #61dafb;
+.footer .icons {
+  display: flex;
+  justify-content: space-around;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer .icons i {
+  color: #000000d4;
+  padding: 5px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.footer .icons img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
 }
