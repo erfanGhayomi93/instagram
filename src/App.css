@@ -12,6 +12,12 @@
 .insta .img-avatar {
   border-radius: 50%;
 }
+.username .fa-bars{
+  font-size: 1.4em;
+}
+.avatar .count p{
+  cursor: pointer;
+}
 
 .edit-profile p {
   border: 1px solid gray;
@@ -43,7 +49,7 @@
   display: block;
   font-size: 35px;
   text-align: center;
-  line-height: 90px;
+  line-height: 85px;
 }
 
 .galley .top-profile {

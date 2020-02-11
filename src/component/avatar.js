@@ -11,17 +11,17 @@ export default class avatar extends Component {
                         <img className="img-avatar" src={faker.image.avatar()} alt="" />
                     </div>
                     <div className="col-md-8 pt-4">
-                        <div className="row text-center">
-                            <div className="col-md-4">
+                        <div className="row text-center count">
+                            <div className="col-md-4" onClick={this.props.avatarProps.bind(null,"posts")}>
                                 <p className="font-weight-bold">27</p>
                                 <p>Posts</p>
                             </div>
-                            <div className="col-md-4">
+                            <div className="col-md-4" onClick={this.props.avatarProps.bind(null,"follower")}>
                                 <p className="font-weight-bold">709</p>
                                 <p>Followers</p>
                             </div>
-                            <div className="col-md-4">
-                                <p className="font-weight-bold">709</p>
+                            <div className="col-md-4" onClick={this.props.avatarProps.bind(null,"following")}>
+                                <p className="font-weight-bold">760</p>
                                 <p>Following</p>
                             </div>
                         </div>

@@ -1,21 +1,66 @@
-import React from 'react';
-import Avatar from './component/avatar';
-import Highlight from "./component/highlight";
-import Gallery from "./component/gallery";
-import Footer from "./component/footer"
+import React, { Component } from 'react';
+import Footer from "./component/footer";
+import Profile from "./component/profile";
+import Notification from "./component/notification";
+import Media from "./component/media";
+import Search from "./component/search";
+import Home from "./component/home";
 
 
-export default function main() {
-    return (
-        <div className="insta pt-1">
-            <Avatar />
+export default class main extends Component {
+    constructor(props) {
+        super(props);
 
-            <Highlight />
+        this.handleChangeMenu = this.handleChangeMenu.bind(this)
 
-            <Gallery />
+        this.state = {
+            changeFooter: "profile"
+        }
+    }
 
-            <Footer />
-            
-        </div>
-    )
+    handleChangeMenu(namePage) {
+        if (this.state.changeFooter === namePage)
+            return
+
+        this.setState({
+            changeFooter: namePage
+        })
+    }
+    render() {
+        const { changeFooter } = this.state;
+        return (
+            <div className="insta pt-1">
+                {
+                    changeFooter === "profile" ?
+                        <Profile /> : ""
+                }
+
+                {
+                    changeFooter === "notification" ?
+                        <Notification /> : ""
+                }
+
+                {
+                    changeFooter === "media" ?
+                        <Media /> : ""
+                }
+
+                {
+                    changeFooter === "search" ?
+                        <Search /> : ""
+                }
+
+                {
+                    changeFooter === "home" ?
+                        <Home /> : ""
+                }
+
+                <Footer
+                    handleMenuProps={this.handleChangeMenu}
+                />
+
+            </div>
+        )
+    }
 }
+
