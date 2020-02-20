@@ -4,6 +4,7 @@ import faker from "faker/locale/fa";
 
 export default class avatar extends Component {
     render() {
+        let{numFollowers,numFollwing,numGallery} = this.props
         return (
             <div className="avatar">
                 <div className="row">
@@ -12,16 +13,19 @@ export default class avatar extends Component {
                     </div>
                     <div className="col-md-8 pt-4">
                         <div className="row text-center count">
-                            <div className="col-md-4" onClick={this.props.avatarProps.bind(null,"posts")}>
-                                <p className="font-weight-bold">27</p>
+                            <div className="col-md-4"
+                                onClick={this.props.avatarProps.bind(null, "posts")}>
+                                <p className="font-weight-bold">{numGallery}</p>
                                 <p>Posts</p>
                             </div>
-                            <div className="col-md-4" onClick={this.props.avatarProps.bind(null,"follower")}>
-                                <p className="font-weight-bold">709</p>
+                            <div className="col-md-4"
+                                onClick={this.props.avatarProps.bind(null, "follower")}>
+                                <p className="font-weight-bold">{numFollowers}</p>
                                 <p>Followers</p>
                             </div>
-                            <div className="col-md-4" onClick={this.props.avatarProps.bind(null,"following")}>
-                                <p className="font-weight-bold">760</p>
+                            <div className="col-md-4"
+                                onClick={this.props.avatarProps.bind(null, "following")}>
+                                <p className="font-weight-bold">{numFollwing}</p>
                                 <p>Following</p>
                             </div>
                         </div>

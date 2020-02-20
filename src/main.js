@@ -19,13 +19,13 @@ export default class main extends Component {
     }
 
     handleChangeMenu(namePage) {
-        if (this.state.changeFooter === namePage)
-            return
-
+        // if(this.state.changeFooter === namePage)
+            // return
+            
         this.setState({
             changeFooter: namePage
         })
-    }
+    } 
     render() {
         const { changeFooter } = this.state;
         return (
@@ -57,10 +57,10 @@ export default class main extends Component {
 
                 <Footer
                     handleMenuProps={this.handleChangeMenu}
+                    isActive = {changeFooter}
                 />
 
             </div>
         )
     }
 }
-

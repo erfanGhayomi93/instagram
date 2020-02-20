@@ -21,54 +21,48 @@ export default class gallery extends Component {
             })
     }
 
-clickOther() {
-    if (this.state.isProfile)
-        this.setState({
-            isProfile: false
-        })
-}
-render() {
-    return (
-        <div className="galley">
-            <div className="top-profile">
-                <i
-                    className={this.state.isProfile ? "fa fa-image border-bootom" : "fa fa-image"}
-                    onClick={this.profile}
-                ></i>
-                <i
-                    className={this.state.isProfile ? "fa fa-camera-retro" : "fa fa-camera-retro border-bootom"}
-                    onClick={this.clickOther}
-                ></i>
+    clickOther() {
+        if (this.state.isProfile)
+            this.setState({
+                isProfile: false
+            })
+    }
+    render() {
+        return (
+            <div className="galley">
+                <div className="top-profile">
+                    <i
+                        className={this.state.isProfile ? "fa fa-image border-bootom" : "fa fa-image"}
+                        onClick={this.profile}
+                    ></i>
+                    <i
+                        className={this.state.isProfile ? "fa fa-camera-retro" : "fa fa-camera-retro border-bootom"}
+                        onClick={this.clickOther}
+                    ></i>
+                </div>
+
+                {
+                    this.state.isProfile ?
+                        <div className="profile pb-5">
+
+                            {
+                                this.props.gallery.map((image,ind) => <div key ={ind}  className="item"> <img src={image} alt="" />  </div>)
+                            }
+
+                        </div>
+                        :
+                        <div className="profile pb-5">
+                            <div className="item"><img src={faker.image.avatar()} alt="" /></div>
+                            <div className="item"><img src={faker.image.avatar()} alt="" /></div>
+                            <div className="item"><img src={faker.image.avatar()} alt="" /></div>
+                            <div className="item"><img src={faker.image.avatar()} alt="" /></div>
+                            <div className="item"><img src={faker.image.avatar()} alt="" /></div>
+                        </div>
+                }
+
             </div>
 
-            {
-                this.state.isProfile ?
-                    <div className="profile pb-5">
-                        <div className="item"><img src={faker.image.avatar()} alt="" /></div>
-                        <div className="item"><img src={faker.image.avatar()} alt="" /></div>
-                        <div className="item"><img src={faker.image.avatar()} alt="" /></div>
-                        <div className="item"><img src={faker.image.avatar()} alt="" /></div>
-                        <div className="item"><img src={faker.image.avatar()} alt="" /></div>
-                        <div className="item"><img src={faker.image.avatar()} alt="" /></div>
-                        <div className="item"><img src={faker.image.avatar()} alt="" /></div>
-                        <div className="item"><img src={faker.image.avatar()} alt="" /></div>
-                        <div className="item"><img src={faker.image.avatar()} alt="" /></div>
-                        <div className="item"><img src={faker.image.avatar()} alt="" /></div>
-                        <div className="item"><img src={faker.image.avatar()} alt="" /></div>
-                    </div>
-                    :
-                    <div className="profile pb-5">
-                        <div className="item"><img src={faker.image.avatar()} alt="" /></div>
-                        <div className="item"><img src={faker.image.avatar()} alt="" /></div>
-                        <div className="item"><img src={faker.image.avatar()} alt="" /></div>
-                        <div className="item"><img src={faker.image.avatar()} alt="" /></div>
-                        <div className="item"><img src={faker.image.avatar()} alt="" /></div>
-                    </div>
-            }
-
-        </div>
-
-    )
-}
+        )
+    }
 }
 

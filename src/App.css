@@ -1,5 +1,16 @@
-.border-bootom{
+.border-bootom {
   border-bottom: 1px solid gray;
+}
+.active {
+  color: black !important;
+}
+.active-img {
+  padding: 2px;
+  border: 1px solid gray;
+  border-radius: 50%;
+}
+.fa {
+  cursor: pointer;
 }
 .insta {
   width: 30%;
@@ -12,10 +23,10 @@
 .insta .img-avatar {
   border-radius: 50%;
 }
-.username .fa-bars{
+.username .fa-bars {
   font-size: 1.4em;
 }
-.avatar .count p{
+.avatar .count p {
   cursor: pointer;
 }
 
@@ -77,6 +88,13 @@
 .galley .profile .item img {
   width: 100%;
 }
+.followPage {
+  margin-bottom: 40px;
+}
+
+.followPage article {
+  cursor: pointer;
+}
 
 .footer {
   position: fixed;
@@ -92,14 +110,47 @@
   justify-content: space-around;
 }
 .footer .icons i {
-  color: #000000d4;
+  color: #656161;
   padding: 5px;
   font-size: 30px;
   cursor: pointer;
+}
+.footer .icons span{
+  display: inline-block;
+  width: 30px;
+  height: 40px;
 }
 .footer .icons img {
   width: 30px;
   height: 30px;
   border-radius: 50%;
   cursor: pointer;
+  padding: 2px;
+}
+
+.friend {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+.friend .item {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+.friend .item img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  padding: 3px;
+  border: 1px solid gray;
+}
+.friend .item .status {
+  /* padding: 5px 10px; */
+  border: 1px solid gray;
+  width: 100px;
+  height: 30px;
+  display: inline-block;
+  text-align: center;
+  line-height: 30px;
 }
