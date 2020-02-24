@@ -11,8 +11,6 @@ export default class follow extends Component {
         this.state = {
             title: this.props.title
         }
-        // console.log(this.props.data)
-
 
     }
 
@@ -24,8 +22,6 @@ export default class follow extends Component {
             title
         })
     }
-
-
 
     render() {
         const { title } = this.state;

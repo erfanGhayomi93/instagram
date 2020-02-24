@@ -129,7 +129,6 @@ export default class profile extends Component {
                                 numFollowers={numFollowers}
                                 numFollwing={numFollwing}
                                 changeFollow={this.handleFollow}
-
                             />
 
                             : this.state.status === "following" ?

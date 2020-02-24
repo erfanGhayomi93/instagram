@@ -43,7 +43,7 @@ export default class footer extends Component {
                     <span className="pt-1"
                         onClick={this.props.handleMenuProps.bind(null, "profile")}
                     >
-                        <img className={ activeImg} src={faker.image.avatar()} alt="" />
+                        <img className={activeImg} src={faker.image.avatar()} alt="" />
                     </span>
                 </div>
             </div>
