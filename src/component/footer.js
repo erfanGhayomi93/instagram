@@ -1,27 +1,26 @@
 import React, { Component } from 'react';
-import faker from "faker/locale/fa";
+import imgMe from "./../images/me.jpeg"
 
 
 export default class footer extends Component {
 
     render() {
-
         const { isActive } = this.props;
-        var activeHome = "", activeSearch = "", activeMedia = "", activeNotification = "",activeImg="";
+        var activeHome = "", activeSearch = "", activeMedia = "", activeNotification = "", activeImg = "";
         if (isActive === "home") {
-            activeHome = "active"
+            activeHome = "active";
         } else if (isActive === "search") {
-            activeSearch = "active"
+            activeSearch = "active";
         } else if (isActive === "media") {
-            activeMedia = "active"
+            activeMedia = "active";
         } else if (isActive === "notification") {
-            activeNotification = "active"
+            activeNotification = "active";
         } else if (isActive === "profile") {
-            activeImg = "active-img"
+            activeImg = "active-img";
         }
 
         return (
-            <div className="footer">
+            <div className="footer default-color">
                 <div className="icons">
                     <i className={`fa fa-home ${activeHome}`}
                         onClick={this.props.handleMenuProps.bind(null, "home")}
@@ -43,7 +42,7 @@ export default class footer extends Component {
                     <span className="pt-1"
                         onClick={this.props.handleMenuProps.bind(null, "profile")}
                     >
-                        <img className={activeImg} src={faker.image.avatar()} alt="" />
+                        <img className={activeImg} src={imgMe} alt="" />
                     </span>
                 </div>
             </div>

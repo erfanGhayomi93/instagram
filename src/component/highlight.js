@@ -1,24 +1,16 @@
 import React, { Component } from 'react';
-import faker from "faker/locale/fa";
+// import faker from "faker/locale/fa";
+import SwiperCustom from "./swiperCustom";
 
 
 export default class highlight extends Component {
     render() {
         return (
-            <div>
-                <div className="highlight">
-                    <div>
-                        <span>+</span>
-                    </div>
-                    <div>
-                        <img src={faker.image.avatar()} alt=""/>
-                    </div>
-                    <div>
-                        <img src={faker.image.avatar()} alt=""/>
-                    </div>
-                    <div>
-                        <img src={faker.image.avatar()} alt=""/>
-                    </div>
+            <div className="">
+                <div className="text-center highlight">
+                    <SwiperCustom 
+                        clickedStory = {(p,img)=>this.props.clickedStory(p,img)}
+                    />
                 </div>
             </div>
         )

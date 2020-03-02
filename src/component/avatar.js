@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
-import faker from "faker/locale/fa";
-
 
 export default class avatar extends Component {
     render() {
         let{numFollowers,numFollwing,numGallery} = this.props
         return (
-            <div className="avatar">
+            <div className="avatar pt-4_5">
                 <div className="row">
                     <div className="col-md-4 text-center">
-                        <img className="img-avatar" src={faker.image.avatar()} alt="" />
+                        <img className="img-avatar" src={this.props.imgProfile} alt="" />
                     </div>
                     <div className="col-md-8 pt-4">
                         <div className="row text-center count">

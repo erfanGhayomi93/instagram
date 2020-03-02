@@ -4,7 +4,12 @@ import Highlight from "./highlight";
 import Gallery from "./gallery";
 import Follow from './follow';
 import Username from "./username";
-import faker from "faker/locale/fa";
+import img1 from "./../images/1.jpg";
+import img2 from "./../images/2.jpg";
+import img3 from "./../images/3.jpg";
+import img4 from "./../images/4.jpg";
+import img5 from "./../images/5.jpg";
+import img6 from "./../images/6.jpg";
 
 
 export default class profile extends Component {
@@ -55,15 +60,21 @@ export default class profile extends Component {
                 {
                     id: 10,
                     status: "following",
-                }, 
+                },
                 {
                     id: 11,
                     status: "follow",
                 }
 
             ],
-            gallery: [faker.image.avatar(), faker.image.avatar(), faker.image.avatar(), faker.image.avatar(), faker.image.avatar(), faker.image.avatar(), faker.image.avatar(), faker.image.avatar(), faker.image.avatar()]
+            gallery: []
         }
+    }
+
+    componentDidMount() {
+        this.setState({
+            gallery: [img1, img2, img3, img4, img5, img6]
+        })
     }
 
     handleAvatar(name) {
@@ -76,7 +87,6 @@ export default class profile extends Component {
     }
 
     handleFollow = (id) => {
-        console.log(id)
         let changeStatus = [...this.state.friends];
         changeStatus = changeStatus.map(friend => {
             if (friend.id === id) {
@@ -96,28 +106,32 @@ export default class profile extends Component {
 
     }
 
-
     render() {
         let numFollowers = this.state.friends.length;
         let numFollwing = this.state.friends.filter(friend => friend.status === "following").length;
         let numGallery = this.state.gallery.length;
-
 
         return (
             <>
                 {
                     this.state.status === "posts" ?
                         <>
-                            <Username />
+                            <Username
+                                goToHome={(h)=>this.props.goToHome(h)} 
+                            />
                             <Avatar
                                 avatarProps={this.handleAvatar}
                                 numFollowers={numFollowers}
                                 numFollwing={numFollwing}
-                                numGallery = {numGallery}
+                                numGallery={numGallery}
+                                imgProfile={this.props.imgProfile}
+
                             />
-                            <Highlight />
-                            <Gallery 
-                            gallery = {this.state.gallery}
+                            <Highlight
+                                clickedStory={() => console.log('حالت بزرگ نمایی استوری فعلا وجود ندارد')}
+                            />
+                            <Gallery
+                                gallery={this.state.gallery}
                             />
                         </>
 

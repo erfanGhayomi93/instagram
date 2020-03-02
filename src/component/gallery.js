@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import faker from "faker/locale/fa";
-
 
 export default class gallery extends Component {
     constructor(props) {
@@ -32,11 +30,11 @@ export default class gallery extends Component {
             <div className="galley">
                 <div className="top-profile">
                     <i
-                        className={this.state.isProfile ? "fa fa-image border-bootom" : "fa fa-image"}
+                        className={this.state.isProfile ? "fa fa-image border-bottom" : "fa fa-image"}
                         onClick={this.profile}
                     ></i>
                     <i
-                        className={this.state.isProfile ? "fa fa-camera-retro" : "fa fa-camera-retro border-bootom"}
+                        className={this.state.isProfile ? "fa fa-camera-retro" : "fa fa-camera-retro border-bottom"}
                         onClick={this.clickOther}
                     ></i>
                 </div>
@@ -52,11 +50,11 @@ export default class gallery extends Component {
                         </div>
                         :
                         <div className="profile pb-5">
-                            <div className="item"><img src={faker.image.avatar()} alt="" /></div>
-                            <div className="item"><img src={faker.image.avatar()} alt="" /></div>
-                            <div className="item"><img src={faker.image.avatar()} alt="" /></div>
-                            <div className="item"><img src={faker.image.avatar()} alt="" /></div>
-                            <div className="item"><img src={faker.image.avatar()} alt="" /></div>
+                            <div className="item"><img src={this.props.gallery[Math.floor(Math.random() * 5)]} alt="" /></div>
+                            <div className="item"><img src={this.props.gallery[Math.floor(Math.random() * 5)]} alt="" /></div>
+                            <div className="item"><img src={this.props.gallery[Math.floor(Math.random() * 5)]} alt="" /></div>
+                            <div className="item"><img src={this.props.gallery[Math.floor(Math.random() * 5)]} alt="" /></div>
+                            <div className="item"><img src={this.props.gallery[Math.floor(Math.random() * 5)]} alt="" /></div>
                         </div>
                 }
 

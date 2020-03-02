@@ -8,17 +8,13 @@ export default class followList extends Component {
         this.state = {
             friends : []
         }
-
     }
 
     static getDerivedStateFromProps(props){
         return props
     }
-
-
     
     render() {
-        // console.log(this.state.friends)
         if (this.props.following) {
             return (
                 this.state.friends

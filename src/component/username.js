@@ -6,23 +6,28 @@ export default class username extends Component {
         const { title } = this.props;
         if (!title) {
             return (
-                <div className="username text-right d-flex p-1" dir="rtl">
+                <div className="username fixed_top default-color text-right d-flex p-1" dir="rtl">
                     <div>
                         <i className="fa fa-bars"></i>
                     </div>
 
                     <div className="text-center flex-grow-1 pl-2">
-                        <i className="fa fa-chevron-down pl-1"></i>
+                        
                         <span className="font-weight-bold">erfuun_mi</span>
                         <i className="fa fa-lock pr-1 text-center"></i>
                     </div>
 
-
+                    <div>
+                    <i
+                    onClick ={()=>this.props.goToHome('home')}
+                     className="fa fa-chevron-left p-1"
+                     ></i>
+                    </div>
                 </div>
             )
         } else {
             return (
-                <div className="p-1 text-center">
+                <div className="fixed_top default-color p-1 text-center">
                     <span className="font-weight-bold">erfuun_mi</span>
                     <i className="fa fa-chevron-left float-left"
                         onClick = {this.props.backProps.bind(null,"posts")}

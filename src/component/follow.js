@@ -33,14 +33,14 @@ export default class follow extends Component {
                     title="follow"
                     backProps={(name) => this.props.avatarProps.call(null, name)}
                 />
-                <div className="followPage pt-3">
+                <div className="followPage pt-4_5">
                     <div className="d-flex text-center">
                         <article
-                            className={`flex-grow-1 pb-1 ${title === "follower" ? "border-bootom" : ""}`}
+                            className={`flex-grow-1 pb-1 ${title === "follower" ? "border-bottom" : ""}`}
                             onClick={() => this.changeTitle('follower')}
                         >{numFollowers} Followers</article>
                         <article
-                            className={`flex-grow-1 pb-1 ${title === "following" ? "border-bootom" : ""}`}
+                            className={`flex-grow-1 pb-1 ${title === "following" ? "border-bottom" : ""}`}
                             onClick={() => this.changeTitle('following')}
                         >{numFollwing} Following</article>
                     </div>
